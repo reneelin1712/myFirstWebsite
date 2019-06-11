@@ -1,0 +1,287 @@
+<!Doctype html5>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Beauty and the Beast</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Allura|Italianno|Parisienne|Yesteryear" rel="stylesheet">
+        <script src="js/jquery-3.4.1.min.js"></script>
+
+        <!-- Scroll animation API from http://www.virgiliudiaconu.com/work/scroll-class/ -->
+        <script src="js/scrollClass.min.js"></script>
+
+        <!-- Map API from https://simplemaps.com/ -->
+        <script type="text/javascript" src="js/mapdata.js"></script>		
+        <script  type="text/javascript" src="js/worldmap.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- customize CSS for Map API popup -->
+        <style type="text/css">
+            .tt_sm{border-radius: 5px;box-shadow: 3px 3px 4px rgba(0,0,0,.5); z-index: 1000000;   background-color: white;   padding: 7px; opacity:0.9; font: 12px/1.5 Verdana, Arial, Helvetica, sans-serif; color: black;} 
+            .tt_name_sm{float: left; font-weight:bolder} 
+            .xmark_sm{float: right; margin-left: 5px; cursor: pointer; line-height: 0px;}  
+            .tt_custom_sm{margin-top:1%; text-align: left;} 
+            .tt_mobile_sm{margin-top: 5px;} 
+            .btn_simplemaps{color: black;text-decoration: none;background: #ffffff;display: inline-block;padding: 5px 5px;margin: 0; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; line-height: 1.43;text-align: center;white-space: nowrap;vertical-align: middle;-ms-touch-action: manipulation;touch-action: manipulation;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;border: 1px solid;border-radius: 4px;}   
+            .btn_simplemaps:hover{text-decoration: underline;}
+        </style> 
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="menu-bar">
+                    <img src = "imagesmenu-button.svg">
+                </div>
+              <ul>
+                <li class="word"><a id="basic" href="#">Wine Basics</a></li>
+                <li class="word"><a id="region" href="#">Region</a></li>
+                <li ><a id="home" href="#"><img src="images/toast.svg"></a></li>
+                <li class="word"><a id="pair" href="#">Food Paring</a></li>
+                <li class="word"><a id ="contact" href="#">Contact</a></li>
+              </ul>  
+            </nav>
+          
+            <h2>Find the perfect wine</h2>
+            <img id="down" src="images/down.svg"/>
+          
+        </header>
+
+        <main>
+        <section class = "winebasic">
+            <h3>Wine Basic</h3>
+            <div class="basicimgs" data-scroll-class="awesome-animation">
+                <div>
+                    <a id="term"><img src = "images/basic.svg"></a>
+                        
+                    <h4>Terminology</h4>
+                </div>
+
+                <div>
+                    <a id="type"><img src = "images/variety.svg"></a>
+                    <h4>Varieties / Types</h4>
+                </div>
+
+                <div>
+                   <a id="label"> <img src ="images/label.svg"></a>
+                    <h4>Label / Package</h4>
+                </div>
+            </div>
+            <div class="basic-popup" id="term-popup">  
+                    <div class="food-content">
+                        <div class="left">
+                            <div class="left-content">
+                                <p>What is Wine?</p>
+                                <p>Wine is an alcoholic beverage made with the fermented juice of grapes. Technically, wine can be made with any fruit, but if it just says wine on the label then it’s made with grapes. </p>
+                                <p><em>single-varietal wine</em> is made primarily with one type of grape. It’s common to see these wines labeled by the name of that grape variety. For example, a bottle of Riesling is made with Riesling grapes. It’s useful to note that each country has different rules for how much of the variety should be included in order to be labeled as a varietal wine.</p>
+                                <p><em>A wine blend</em> is a wine made with a blend of several grape varieties.[1]</p>
+                            </div>
+                        </div>
+                        
+                        <div class="right">
+                            <a href="index.html"><img src="images/food pairing/cancel.svg"></a>
+                            <div class="right-content" id="term-right">
+                                <p>The Taste of Wine</p>
+                                <p><em>Acidity:</em> Wine as a beverage lies on the acidic end of the pH scale ranging from as low as 2.5 (lemon) to as high as 4.5 (greek yoghurt). Wine tastes tart. </p>
+                                <p><em>Sweetness:</em> Depending on what style of wine you drink, sweetness in wine ranges from having no sugar at all to sweet like maple syrup. The term dry refers to a wine without sweetness.</p>
+                                <p><em>Alcohol:</em> The taste of alcohol is spicy, palate-coating and warms the back of your throat. The average range of alcohol is about 10% ABV (alcohol by volume) to 15% ABV. Of course, there are a few exceptions: Moscato dAsti is as low as 5.5% ABV and Port is fortified with neutral brandy upping it to 20% ABV.</p>
+                                <p><em>Tannin:</em> Tannin is found in red wines and contributes to the astringent quality of red wine. Put a wet, black tea bag on your tongue for a great example of how tannin tastes.[1]</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="basic-popup" id="type-popup">  
+                    <div class="food-content">
+                        <div class="left">
+                            <div class="left-content">
+                                <p>Common Types of Wine</p>
+                                <p><em>Click pictures as below to get more information</em> The darker the color the stronger the wine </p>
+                                <p><em>White Wine</em></p>
+                                <div class="whiteWine">
+                                    <div class = "detail" id="riesling"><img src="images/types/white sweet.svg">Riesling</div>
+                                    <div class = "detail" id="pinotGris"><img src="images/types/white light.svg">Pinot Gris</div>
+                                    <div class = "detail" id="sauBlanc"><img src="images/types/white light 2.svg">Sauvigion Blanc</div>
+                                    <div class = "detail" id="Char"><img src="images/types/white full bodied.svg">Chardonnay</div>
+                                </div>
+                                <p><em>Red Wine</em></p>
+                                <div class="redWine">
+                                    <div class = "detail" id="pinotNoir"><img src="images/types/red light.svg">Pinot Noir</div>
+                                    <div class = "detail" id="zinfandel" ><img src="images/types/red medium.svg">Zinfandel</div>
+                                    <div class = "detail" id="syrah"><img src="images/types/red full bodied.svg">Syrah</div>
+                                    <div class = "detail" id="cabSauv"><img src="images/types/red full bodied.svg">Cabernet Sauvigion</div>
+                                </div>
+ 
+                            </div>
+                        </div>
+                        
+                        <div class="right">
+                                <a href="index.html"><img src="images/food pairing/cancel.svg"></a>
+                                <div class="right-content" id="term-right">
+                                    <p id="heading">Riesling</p>
+                                    <p id="description">Always very high in acid, when made as a table wine Rieslings can be harmoniously sweet (sweet and sour) or dry (very acidic). The wine is polarizing because some people find dry styles too acidic and sweet styles too cloying, but sweetness is always a wine making decision and not inherent to the grape.</p>
+                                    <p id="taste">Taste: Citrus (kefir lime, lemon juice) and stone-fruit (white peach, nectarine) always feature prominently, although there are also usually floral and sweet herbal elements as well.</p>
+                                    <p id="alternative">Alternative wine are (1)Moscato: Less acidic with a much more aggressively floral flavor profile. (2)Torrontés: Related to Moscato, but always in a dry style, more full-bodied and bitter.[2]</p>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+
+            <div class="basic-popup" id="label-popup">       
+                    <div class="food-content">     
+                        <div class="left">
+                                <div class="left-content">
+                                    <p>On Wine Labels</p>
+                                    <p>certain information appear on the main label of all wine bottles — basic stuff, such as the alcohol content, the type of wine (usually red table wine or white table wine), and the country of origin. Such items are generally referred to as the mandatory. These items include the following:</p>
+                                    <li>A brand name</li>
+                                    <li>Indication of class or type </li>
+                                    <li>The percentage of alcohol by volume</li>
+                                    <li>Name and location of the bottler</li>
+                                    <li>Net contents</li>
+                                    <li>[3]</li>
+                                   
+
+                                </div>
+                            </div>         
+                        <div class="right"> 
+                            <a href="index.html"><img src="images/food pairing/cancel.svg"></a>
+                            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/FhtxEenSPCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+            </div>
+
+        </section>
+
+        <section class = "region">
+            <h3>Region</h3>
+            <div id="map"></div>
+        </section>
+
+        <section class="foodpairing">
+            <h3>Food Pairing</h3>
+            <div class="foods">
+            <a id="beef"><img src = "images/beef.svg" />Beef</a>
+                <div class="food-popup" id="beef-popup">  
+                        <div class="food-content">
+                            <div class="left">
+                                <div class="left-content">
+                                    <p>Beef + Red Wine</p>
+                                    <p>Red meat goes well with red wine, this is because red wine is high in tannin and tannin gives a feeling of dryness, it is matched with the fattness in red meat. The general rule is Leaner = Lighter, the leaner the red meat you are matching, the lighter the red wine you can use. </p>
+                                    <p>As a result, a rich cut, such as prime rib, will pair nicely with a bold and high tannin red wine such as Petite Sirah or Cabernet Sauvignon. For wine with lamb, the delicate texture and flavor, choose a bold red wine with fine tannins such Malbec or Petit Verdot.[4]</p>
+                                </div>
+                            </div>
+                            
+                            <div class="right">
+                                <a href="index.html"><img src="images/food pairing/cancel.svg"></a>
+                                <img src="images/food pairing/beef.svg">
+                            </div>
+                        </div>
+                </div>
+
+            <a id="chicken"><img src = "images/chicken.svg" />Chicken</a>
+                <div class="food-popup" id="chicken-popup">  
+                        <div class="food-content">
+                            <div class="left">
+                                <div class="left-content">
+                                    <p>Chicken + White Wine</p>
+                                    <p>As a general rule, white meat such as chicken or turkey breast pairs well with white wines like Sauvignon Blanc or Chardonnay, while dark meat like duck and other game go well with medium bodied red wines such as Pinot Noir or Zinfandel. </p>
+                                    <p>A quick tip is to think “lighter meat, lighter wine.” Roasting poultry preserves a lot of the rich flavors so sometimes you can get away with a red wine with more complexity.Anyway,Try to match the intensity of the dish with the intensity of the wine.[5]</p>
+                                </div>
+                            </div>
+                            
+                            <div class="right">
+                                <a href="index.html"><img src="images/food pairing/cancel.svg"></a>
+                                <img src="images/food pairing/chicken black.svg">
+                            </div>
+                        </div>
+                </div>
+
+        
+            <a id="seafood"><img src = "images/crab.svg" />Seafood</a>
+                <div class="food-popup" id="seafood-popup">  
+                        <div class="food-content">
+                            <div class="left">
+                                <div class="left-content">
+                                    <p>Seafood + White Wine</p>
+                                    <p>Delicate fishes are often prepared simply in a lemon or with sprinkling of fresh herbs, not overshadow the fish. Your wine should act in the same way. If the fish is very flaky (more like sol), go for something bright and fresh, like a Pinot Grigio or dry Riesling; if there’s a bit more weight to the fish, pour something a with slightly more body and aromatics, like a cool-climate Chardonnay or Chenin Blanc. </p>
+                                    <p>However,fish stews and curries or rich tomato-based dishes like Bouillabaisse are best when paired with a light-medium bodied red wines, or even some rosés. Think Old World Pinot Noir, Nebbiolo and Grenache. White wine of course still works, think New World wines. Oaked Chardonnay from California, Australia and Chile, as well as Viognier and Rioja Blanco, are great choices for oily and meaty fish like salmon and tuna.[6]</p>
+                                </div>
+                            </div>
+                            
+                            <div class="right">
+                                <a href="index.html"><img src="images/food pairing/cancel.svg"></a>
+                                <img src="images/food pairing/crab black.svg">
+                            </div>
+                        </div>
+                </div>
+
+            <a id="vege"><img src="images/food pairing/vege.svg"/>Vegetable</a>
+                <div class="food-popup" id="vege-popup">  
+                        <div class="food-content">
+                            <div class="left">
+                                <div class="left-content">
+                                    <p>Vegetables</p>
+                                    <p>As with any dish, pairing vegetables with wine can be successfully achieved through one of two strategies: choose a wine that shows some of the same characteristics as the dish, like high acidity or vegetal notes. Alternatively, serve a wine that will contrast with the dish, such as a crisp white with something lush and fatty, like avocado. </p>
+                                    <p>You’ll also want to consider how the dish is cooked. Roasting and caramelizing brings out the richer, sweeter flavors in a vegetable. Steaming or sautéing can keep the flavors light and bright. Braising will bring out some of the deeper, more brooding aspects of a vegetable or legume. Other components in a dish, from fresh herbs to spices, can also affect what you might pair with it, so consider options at both ends of the light white to dark red wine spectrum.[7]</p>
+                                </div>
+                            </div>
+                            
+                            <div class="right">
+                                <a href="index.html"><img src="images/food pairing/cancel.svg"></a>
+                                <img src="images/food pairing/vege black.svg">
+                            </div>
+                        </div>
+                </div>
+
+            <a id="noodle"><img src = "images/food pairing/spaghetti.svg" />Pasta</a>
+                <div class="food-popup" id="noodle-popup">  
+                        <div class="food-content">
+                            <div class="left">
+                                <div class="left-content">
+                                    <p>Pasta</p>
+                                    <p>The best tip on pairing wine with pasta is to ignore the pasta and pay attention to the sauce.Tomato-based sauces are powerful, high acid and are often blended with rich, red meats. Because of the acidity in tomatoes, a relatively tart red with middle-weight body is your best option.</p>
+                                    <p>For cheesy pasta, a white wine with some creaminess to it, like an oak-aged Italian Trebbiano or Chardonnay, is going to create a congruent pairing and highlight the creaminess in the cheese (think ricotta!). Also, lighter more floral red wines are another awesome pairing partner with tart, intense hard-cheese pasta, especially if there are mushrooms or root vegetables involved in the sauce.[8]</p>
+                                </div>
+                            </div>
+                            
+                            <div class="right">
+                                <a href="index.html"><img src="images/food pairing/cancel.svg"></a>
+                                <img src="images/food pairing/spaghetti black.svg">
+                            </div>
+                        </div>
+                </div>
+            <a id="dessert"><img src = "images/cake.svg" />Dessert</a>
+                <div class="food-popup" id="dessert-popup">  
+                        <div class="food-content">
+                            <div class="left">
+                                <div class="left-content">
+                                    <p>Dessert</p>
+                                    <p>For Custard and Vanilla,Desired Flavors (in the wine and dessert): Mild, light, buttery. Suggested Wine Pairings: White wines (late-harvest Riesling), sparkling wines like demi-sec champagne, and Asti Spumanti. </p>
+                                    <p>For Fruit and Spice. Desired Flavors (in the wine and dessert): Apples, pears, cinnamon. Suggested Wine Pairings: White wines (Sauternes, late-harvest Gewirtztraminer) and pink champagne.</p>
+                                    <p>For Caramels and Chocolates. Desired Flavors (in the wine and dessert): Dark, buttery, caramelized, rich. Suggested Wine Pairings: Red wine (like late-harvest Pinot Noir, Banyuls, Grenache, Australian Shiraz), port (the classic chocolate pairing), and Grappa.[9]</p>
+                                </div>
+                            </div>
+                            
+                            <div class="right">
+                                <a href="index.html"><img src="images/food pairing/cancel.svg"></a>
+                                <img src="images/food pairing/cake black.svg">
+                            </div>
+                        </div>
+                </div>
+        </div>    
+        </section>
+        </main>
+
+        <footer>
+            <div class="socialapp">
+                <img src="images/social-media/svg/021-facebook.svg" />
+                <img src="images/social-media/svg/043-twitter.svg" />
+                <img src="images/social-media/svg/034-snapchat.svg" />
+                <img src="images/social-media/svg/041-pinterest.svg">
+                <img src="images/social-media/svg/025-instagram.svg">        
+            </div>
+            <div>Renee @2019 <a target="_blank" href="reference.html">Reference</a></div>
+        </footer>
+    </body>   
+
+</html>

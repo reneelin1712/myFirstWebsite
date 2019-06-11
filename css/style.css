@@ -1,0 +1,608 @@
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Roboto', sans-serif;
+}
+
+em {
+  font-weight: bolder;
+  color:blue;
+}
+
+/* Header */
+header{
+  height: 100vh;
+  background-image: url("https://i.postimg.cc/3xNNs5T7/dine.gif");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align:center; 
+  color:white;
+}
+
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+}
+
+nav{
+  position: fixed;
+  width: 100%;
+  z-index:9;
+  /* padding-top:2%; */
+  box-shadow: 0 10px 20px rgba(50,50,50,.95);
+}
+
+nav .menu-bar{
+  text-align: right;
+  padding:1%;
+  display: none;
+}
+
+nav img{
+  height: 7%;
+}
+
+nav ul{
+  list-style-type: none;
+  
+}
+
+nav li{
+  display: inline;
+  padding: 2%;
+  margin:0;
+  
+}
+
+nav li a{
+  text-decoration: none;
+  color: gray;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+}
+
+.word a:hover{
+  color: white;
+  background-color: black;
+}
+
+header h2{
+  padding-top:16%;
+  font-size:5em;
+  font-family: 'Italianno', cursive;
+  letter-spacing: 5px;
+}
+
+#down{
+  width:2%;
+  height: 5%;
+  top:90%;
+  animation-name: scroll-down;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes scroll-down{
+  from{
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+  }
+  to{
+      transform: translate3d(0, 10px, 0);
+      opacity: 0;
+  }
+}
+
+
+/* main sections */
+section{
+  height:100vh;
+}
+
+.main{
+  margin-top:1%;
+  text-align: center;
+  
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.main div{
+  margin: 2%;
+}
+
+.winebasic{
+  text-align: center;
+  color: black !important;
+}
+
+.basicimgs{
+  display:flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 80%;
+  padding: 3%;
+}
+.basicimgs div{
+  width:33%;
+  height: auto;
+}
+
+.basicimgs img{
+  width: 50%;
+  background-color: antiquewhite;
+  padding: 5vh;
+  border-radius: 30%;
+  margin-bottom: 2%;
+}
+
+.basicimgs img:hover{
+   box-shadow:  0 10px 20px rgba(50,50,50,.95);
+}
+
+/* Popup pages for first section "wine basic" */
+#term-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: white;
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s ease;
+	visibility: hidden;
+  opacity: 0;
+  color:gray;
+  text-align: left;
+  z-index:99;
+  overflow-y: scroll;
+}
+
+
+body.show-terminology-popup {
+	overflow: hidden;
+}
+
+body.show-terminology-popup #term-popup{
+  visibility: visible;
+	opacity: 1;
+}
+
+#type-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: white;
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s ease;
+	visibility: hidden;
+  opacity: 0;
+  color:gray;
+  text-align: left;
+  z-index:99;
+  overflow-y: scroll;
+}
+
+
+body.show-type-popup {
+	overflow: hidden;
+}
+
+body.show-type-popup #type-popup{
+  visibility: visible;
+	opacity: 1;
+}
+
+.whiteWine, .redWine{
+  display: flex;
+}
+
+.whiteWine div, .redWine div{
+  width: 20%;
+  text-align: center;
+  margin-left: 2%;
+  border-radius: 10%;
+}
+
+.whiteWine div:hover, .redWine div:hover{
+  box-shadow: 0 10px 20px rgba(50,50,50,.95);
+}
+
+#label-popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: white;
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s ease;
+	visibility: hidden;
+  opacity: 0;
+  color:gray;
+  text-align: left;
+  z-index:99;
+  overflow-y: scroll;
+}
+
+body.show-label-popup {
+	overflow: hidden;
+}
+
+body.show-label-popup #label-popup{
+  visibility: visible;
+	opacity: 1;
+}
+
+iframe{
+margin-top: 11%;
+}
+
+
+
+/* Region */
+.region{
+  background-image: url("../images/back.png");
+  text-align: center;
+  color:white;
+
+}
+
+section h3{
+    position: absolute;
+    margin-top:8vh ;
+    margin-left: 5%;
+    font-size: 2em;
+}
+
+.region img{
+  height: 95vh;
+}
+
+#map{
+  position: absolute;
+  margin-top:12vh ;
+  margin-left: 10%;
+  width:80%;
+}
+
+.region img{
+  width:60%;
+  
+}
+
+
+/* the third section: food pariting  */
+.foods{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding:10%;
+}
+
+.foods img{
+  width:100%;
+  height: 25%;
+  margin-bottom: 2%;
+}
+
+.foods a{
+  width:20%;
+  height: 20%;
+  margin-left:5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+
+}
+
+.foods a:hover{
+  box-shadow:0 10px 20px #d46a6a;
+  border-radius: 30%;
+}
+
+/* popup pages of this third food paring section */
+.food-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+	height: 100%;
+	transition: all 0.5s ease;
+	visibility: hidden;
+  opacity: 0;
+  color:gray;
+  text-align: left;
+  z-index: 99;
+  overflow-y: scroll;
+  background: white;
+}
+
+
+body.show-popup-beef {
+	overflow: hidden;
+}
+
+body.show-popup-beef #beef-popup{
+  visibility: visible;
+	opacity: 1;
+}
+
+body.show-popup-chicken {
+	overflow: hidden;
+}
+body.show-popup-chicken #chicken-popup{
+  visibility: visible;
+	opacity: 1;
+}
+
+body.show-popup-seafood {
+	overflow: hidden;
+}
+body.show-popup-seafood #seafood-popup{
+  visibility: visible;
+	opacity: 1;
+}
+
+body.show-popup-vege {
+	overflow: hidden;
+}
+
+body.show-popup-vege #vege-popup{
+  visibility: visible;
+	opacity: 1;
+}
+
+body.show-popup-noodle {
+	overflow: hidden;
+}
+
+body.show-popup-noodle #noodle-popup{
+  visibility: visible;
+	opacity: 1;
+}
+
+body.show-popup-dessert {
+	overflow: hidden;
+}
+
+body.show-popup-dessert #dessert-popup{
+  visibility: visible;
+	opacity: 1;
+}
+
+.food-content{
+  width:100%;
+  height: 100%;
+  display: flex;
+}
+
+.left{
+  background: white;
+  width:50%;
+  height: 100%;
+  padding-top:8%;
+
+}
+
+
+.left-content, .right-content{
+  width:60%;
+  margin-left: 20%;
+  line-height: 1.5em;
+}
+
+.left-content p:first-child,.right-content p:first-child{
+  font-weight: bold;
+  font-size: 2em;
+  color:black;
+}
+
+.left p, .right p{
+  margin:5%;
+}
+
+.right{
+  text-align: center;
+  background: #ffacaa;
+  width:50%;
+  height: 100%;
+}
+
+.right img:first-child{
+  display: block;
+  margin-top: 5%;
+  margin-left:90%;
+  width:5%;
+  height:5%;
+}
+.right img:nth-child(2){
+  margin-top:10%;
+  width:55%;
+  height:55%;
+}
+
+#term-right{
+  padding-top:5%;
+  text-align: left;
+}
+
+
+.community img{
+  width: 35%;
+  height:auto;
+  margin-right:1%;
+  margin-left:1%;
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  padding:2%;
+  background-color: #d46a6a;
+}
+footer ul{
+  list-style-type: none;
+  margin: 2%;
+}
+
+footer ul li{
+  margin-bottom: 1vh;
+}
+
+footer img{
+  
+  width: 4%;
+  margin:0.5%;
+}
+
+footer a{
+  color:white;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+
+  section{
+    height:60%;
+    text-align: center;
+  }
+
+  header{
+    height: 40%;
+    background-size: contain;
+  }
+
+  header h2{
+    font-size:2.5em;
+    margin:0 20% 0 20%;
+    line-height: 1em;
+    
+  }
+
+  section h3{
+    position: relative;
+    margin-top:2vh ;
+    font-size: 1.6em;
+    display: block;
+}
+
+.region {
+  height: 45%;
+}
+#map{
+  position: absolute;
+  margin-top:5vh ;
+  margin-left: 10%;
+  width:80%;
+  
+}
+
+  nav ul{
+    background: #ffacaa;
+    color: white;
+  }
+
+  nav .menu-bar{
+    display:block;
+  }
+
+  nav ul{
+    width:100%;
+    display: none;
+  }
+
+  nav ul li{
+    display: block;
+  }
+
+  .show{
+    display: block;
+  }
+
+  #down{
+    width:5%;
+    height: 8%;
+    top:90%;
+    animation-name: scroll-down;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  
+  }
+
+  .basicimgs{
+    flex-wrap:wrap;
+    margin-top: 3%;
+    
+  }
+
+  .basicimgs div{
+    width:60%;
+    height: 30%;
+    margin-left:20%;
+    padding: 2%;
+  }
+
+  .basicimgs img{
+    width: 20%;
+  padding: 1%;}
+
+
+  .foodpairing{
+    height: 120%;
+    padding-left:15%;
+    padding-right:15%;
+  }
+
+  .foods img {
+    width: 100%;
+    height: 9%;
+}
+  .foods a{
+    width:39%;
+    height: 12%;
+    padding:1%;
+  }
+
+  .food-content{
+    flex-wrap: wrap;
+  }
+  .left{
+    width:100%;
+    height: 70%;
+    order:2;
+  }
+  .right{
+    width:100%;
+    height:30%;
+    order:1;
+  }
+
+  .basic-popup .left{
+    height: 130%;
+    order:1;
+  }
+
+  .basic-popup .right{
+    height: 180%;
+    order:2;
+  }
+  .right img:nth-child(2){
+    margin-top:1%;
+    width:55%;
+    height:55%;
+  }
+
+  iframe{
+    width:95%;
+  }
+
+}
